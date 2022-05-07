@@ -98,10 +98,10 @@ class Prepend extends ModulePrepend
         }
 
         # Module to pack
-        if (!$list->hasModule($id)) {
+        if (!$list->modules()->hasModule($id)) {
             throw new ModuleException(__('No such module.'));
         }
-        $module = $list->getModule($id);
+        $module = $list->modules()->getModule($id);
 
         # Excluded files and dirs
         $exclude = [
