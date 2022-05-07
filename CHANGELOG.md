@@ -1,4 +1,7 @@
-0.4 -  2021.09.02
+0.5-dev - 2022.02.20
+- Dotclear Namespace version
+
+0.4 - 2021.09.02
 - clean up code
 - add dcstore.xml
 
