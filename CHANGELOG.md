@@ -1,5 +1,5 @@
-0.5-dev - 2022.02.20
-- Dotclear Namespace version
+0.5 - 2022.05.07
+- Dotclear Nx version
 
 0.4 - 2021.09.02
 - clean up code

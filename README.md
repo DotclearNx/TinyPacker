@@ -1,8 +1,8 @@
 # README
 
-## WHAT IS tinyPacker ?
+## WHAT IS TinyPacker ?
 
-_tinyPacker_ is a plugin for the open-source 
+_TinyPacker_ is a plugin for the open-source 
 web publishing software called Dotclear.
 
 It is a one button packager for plugins and theme 
@@ -10,15 +10,15 @@ direct from Dotclear blog manager.
 
 ## REQUIREMENTS
 
-_tinyPacker_ requires: 
+_TinyPacker_ requires: 
 
  * Super administrator permissions
- * Dotclear 2.18 
+ * Dotclear 3.0-dev (whatever it's called hu!)
  * A writable public directory.
 
 ## USAGE
 
-First install _tinyPacker_, manualy from a zip package or from 
+First install _TinyPacker_, manualy from a zip package or from 
 Dotaddict repository. (See Dotclear's documentation to know how do this)
 
 Go to ''plugins manager'' or ''themes manager'', 
@@ -28,5 +28,5 @@ and it's pack into current blog public directory.
 ## MORE
 
  * License : GNU GPL v2
- * Source & contribution : [GitHub Page](https://github.com/JcDenis/tinyPacker)
+ * Source & contribution : [GitHub Page](https://github.com/DotclearNx/TinyPacker)
  * Packages & details:  [Dotaddict Page](https://plugins.dotaddict.org/dc2/details/tinyPacker)

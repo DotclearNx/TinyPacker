@@ -21,12 +21,12 @@ if (!class_exists('Dotclear\App')) {
 return [
     'name'=>__('Tiny packer'),
     'description'=>__('Quick pack theme or plugin into public dir'),
-    'version'=>'0.5-dev',
+    'version'=>'0.5',
     'author'=>'Jean-Christian Denis',
     'type'=>'Plugin',
-    'support'=>'https://github.com/JcDenis/tinyPacker',
+    'support'=>'https://github.com/DotclearNx/TinyPacker',
     'details'=>'https://plugins.dotaddict.org/dc2/details/tinyPacker',
-    'repository'=>'https://raw.githubusercontent.com/JcDenis/tinyPacker/master/dcstore.xml',
+    'repository'=>'https://raw.githubusercontent.com/DotclearNx/TinyPacker/master/dcstore.xml',
     'requires' => [
         'core' => '3.0-dev',
     ],

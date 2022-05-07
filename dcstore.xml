@@ -1,11 +1,11 @@
 <modules xmlns:da="http://dotaddict.org/da/">
-<module id="tinyPacker">
+<module id="TinyPacker">
 <name>Tiny packer</name>
-<version>0.4</version>
+<version>0.5</version>
 <author>Jean-Christian Denis</author>
 <desc>Quick pack theme or plugin into public dir</desc>
-<file>https://github.com/JcDenis/tinyPacker/releases/download/v0.4/plugin-tinyPacker.zip</file>
+<file>https://github.com/DotclearNx/TinyPacker/releases/download/v0.5/plugin-TinyPacker.zip</file>
 <da:details>https://plugins.dotaddict.org/dc2/details/tinyPacker</da:details>
-<da:support>https://github.com/JcDenis/tinyPacker</da:support>
+<da:support>https://github.com/DotclearNx/TinyPacker</da:support>
 </module>
 </modules>
