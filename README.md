@@ -3,7 +3,7 @@
 [![Release](https://img.shields.io/github/v/release/DotclearNx/TinyPacker)](https://github.com/DotclearNx/TinyPacker/releases)
 [![Date](https://img.shields.io/github/release-date/DotclearNx/TinyPacker)](https://github.com/DotclearNx/TinyPacker/releases)
 [![Issues](https://img.shields.io/github/issues/DotclearNx/TinyPacker)](https://github.com/DotclearNx/TinyPacker/issues)
-[![Dotclear](https://img.shields.io/badge/dotclear-v3.0-dev-blue.svg)](https://fr.dotclear.org/download)
+[![Dotclear](https://img.shields.io/badge/dotclear-v3.0-blue.svg)](https://github.com/DotclearNx/dotclear-blog)
 [![Dotaddict](https://img.shields.io/badge/dotaddict-official-green.svg)](https://plugins.dotaddict.org/dc2/details/TinyPacker)
 [![License](https://img.shields.io/github/license/DotclearNx/TinyPacker)](https://github.com/DotclearNx/TinyPacker/blob/master/LICENSE)
 
