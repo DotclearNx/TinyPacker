@@ -1,3 +1,6 @@
+0.5.1 - 2022.07.01
+- Follow Dotclear Nx changes
+
 0.5 - 2022.05.07
 - Dotclear Nx version
 

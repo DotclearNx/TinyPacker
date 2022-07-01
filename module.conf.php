@@ -21,7 +21,7 @@ if (!class_exists('Dotclear\App')) {
 return [
     'name'=>__('Tiny packer'),
     'description'=>__('Quick pack theme or plugin into public dir'),
-    'version'=>'0.5',
+    'version'=>'0.5.1',
     'author'=>'Jean-Christian Denis',
     'type'=>'Plugin',
     'support'=>'https://github.com/DotclearNx/TinyPacker',

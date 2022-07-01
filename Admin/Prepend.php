@@ -16,15 +16,18 @@ declare(strict_types=1);
 namespace Dotclear\Plugin\TinyPacker\Admin;
 
 use Dotclear\App;
-use Dotclear\Exception\ModuleException;
+use Dotclear\Exception\InvalidConfiguration;
+use Dotclear\Exception\InvalidValueReference;
 use Dotclear\Modules\ModuleDefine;
 use Dotclear\Modules\ModulePrepend;
 use Dotclear\Modules\Plugin\PluginList;
 use Dotclear\Helper\File\Files;
 use Dotclear\Helper\File\Path;
 use Dotclear\Helper\File\Zip\Zip;
-use Dotclear\Helper\Network\Http;
+use Dotclear\Helper\GPC\GPC;
 use Dotclear\Helper\Html\Html;
+use Dotclear\Helper\Mapper\Strings;
+use Dotclear\Helper\Network\Http;
 
 class Prepend extends ModulePrepend
 {
@@ -34,12 +37,10 @@ class Prepend extends ModulePrepend
             return;
         }
 
-        App::core()->behavior()->add(
-            'adminModulesListGetActions',
+        App::core()->behavior('adminModulesListGetActions')->add(
             [$this, 'tinyPackerAdminModulesListGetActions']
         );
-        App::core()->behavior()->add(
-            'adminModulesListDoActions',
+        App::core()->behavior('adminModulesListDoActions')->add(
             [$this, 'tinyPackerAdminModulesListDoActions']
         );
     }
@@ -53,11 +54,11 @@ class Prepend extends ModulePrepend
     /**
      * Add button to create package to modules lists
      * 
-     * @param   PluginList     $list       PluginList instance
-     * @param   string              $id         Module id
-     * @param   ModuleDefine      $module     ModuleDefine instance
+     * @param   PluginList   $list   PluginList instance
+     * @param   string       $id     Module id
+     * @param   ModuleDefine $module ModuleDefine instance
      * 
-     * @return  string                          HTML submit button
+     * @return  string HTML submit button
      */
     public function tinyPackerAdminModulesListGetActions(PluginList $list, string $id, ModuleDefine $module): string
     {
@@ -74,32 +75,32 @@ class Prepend extends ModulePrepend
     /**
      * Create package on modules lists action
      * 
-     * @param   PluginList     $list       PluginList instance
-     * @param   array               $modules    Selected modules ids
-     * @param   string              $type       List type (plugins|themes)
+     * @param   PluginList $list    PluginList instance
+     * @param   Strings    $modules Selected modules ids
+     * @param   string     $type    List type (plugins|themes)
      * 
-     * @throws  ModuleException                 If no public dir or module
+     * @throws  InvalidConfiguration  If no public dir
+     * @throws  InvalidValueReference If no module
      */
-    public function tinyPackerAdminModulesListDoActions(PluginList $list, array $modules, string $type): void
+    public function tinyPackerAdminModulesListDoActions(PluginList $list, Strings $ids, string $type): void
     {
-        # Pack action
-        if (empty($_POST['tinypacker']) 
-         || !is_array($_POST['tinypacker'])) {
-            return;
-        }
-        $topack = array_keys($_POST['tinypacker']);
-        $id = $topack[0];
-
         # Repository directory
         if (($root = $this->tinyPackerRepositoryDir()) === false) {
-            throw new ModuleException(
+            throw new InvalidConfiguration(
                 __('Destination directory is not writable.'
             ));
         }
 
+        # Pack action
+        if (GPC::post()->empty('tinypacker')) {
+            return;
+        }
+        $topack = array_keys(GPC::post()->array('tinypacker'));
+        $id = $topack[0];
+
         # Module to pack
         if (!$list->modules()->hasModule($id)) {
-            throw new ModuleException(__('No such module.'));
+            throw new InvalidValueReference(__('No such module.'));
         }
         $module = $list->modules()->getModule($id);
 
@@ -153,7 +154,7 @@ class Prepend extends ModulePrepend
     /**
      * Check and create directories used by packer
      * 
-     * @return  string|bool     Cleaned path or false on error
+     * @return  string|bool Cleaned path or false on error
      */
     public function tinyPackerRepositoryDir(): string|bool
     {
